@@ -1,3 +1,13 @@
+### React Counter
+#### A simple counter built using create-react-app
+#### Utilises the useState hook to set count when one of the buttons are clicked
+#### I added a reset button which sets the state to 0 and a ternary operator for positive or negative values changes the count color accordingly 
+#### Clone the repo locally and run 'npm start' to check it out!
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
