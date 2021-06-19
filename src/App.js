@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+
+const INCREMENTS = [1, 2, 5, 10];
+const DECREMENTS = [1, 2, 5, 10];
 
 function App() {
+  const [count, setCount] = useState(0);
+  const span = document.getElementById("count");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <h1>
+          Count:
+          <span id="count" className={count < 0 ? "negative" : "positive"}>
+            {count}
+          </span>
+        </h1>
+      </div>
+      <div>
+        <h4>Increment</h4>
+        {INCREMENTS.map((value) => {
+          return (
+            <button onClick={() => setCount(count + value)}>+{value}</button>
+          );
+        })}
+      </div>
+      <div>
+        <h4>Decrement</h4>
+        {DECREMENTS.map((value) => {
+          return (
+            <button onClick={() => setCount(count - value)}>-{value}</button>
+          );
+        })}
+      </div>
+      <div>
+        <button onClick={() => setCount(0)} className="reset">
+          RESET
+        </button>
+      </div>
     </div>
   );
 }
