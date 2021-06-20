@@ -13,7 +13,16 @@ function App() {
       <div>
         <h1>
           Count:
-          <span id="count" className={count < 0 ? "negative" : "positive"}>
+          <span
+            id="count"
+            className={
+              count > 0
+                ? "positive"
+                : "negative" && count < 0
+                ? "negative"
+                : null
+            }
+          >
             {count}
           </span>
         </h1>
