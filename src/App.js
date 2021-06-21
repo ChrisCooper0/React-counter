@@ -6,7 +6,6 @@ const DECREMENTS = [1, 2, 5, 10];
 
 function App() {
   const [count, setCount] = useState(0);
-  const span = document.getElementById("count");
 
   return (
     <div className="App">
@@ -25,7 +24,9 @@ function App() {
         <h4>Increment</h4>
         {INCREMENTS.map((value) => {
           return (
-            <button onClick={() => setCount(count + value)}>+{value}</button>
+            <button onClick={() => setCount((count) => count + value)}>
+              +{value}
+            </button>
           );
         })}
       </div>
@@ -33,12 +34,14 @@ function App() {
         <h4>Decrement</h4>
         {DECREMENTS.map((value) => {
           return (
-            <button onClick={() => setCount(count - value)}>-{value}</button>
+            <button onClick={() => setCount((count) => count - value)}>
+              -{value}
+            </button>
           );
         })}
       </div>
       <div>
-        <button onClick={() => setCount(0)} className="reset">
+        <button onClick={() => setCount((count) => 0)} className="reset">
           RESET
         </button>
       </div>
