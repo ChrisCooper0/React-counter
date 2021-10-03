@@ -3,7 +3,6 @@
 - I utilised the useState hook to setCount state when a button is clicked
 - I added a reset button which sets the count state to 0 and a ternary operator for positive & negative values which changes the count colour accordingly 
 - Clone the repo locally, run 'npm install' and then 'npm start' to check it out!
-- 
 
 # Getting Started with Create React App
 
