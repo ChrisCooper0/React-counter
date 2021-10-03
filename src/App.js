@@ -1,8 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 
-const INCREMENTS = [1, 2, 5, 10];
-const DECREMENTS = [1, 2, 5, 10];
+const numbers = [1, 2, 5, 10];
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,26 +21,26 @@ function App() {
       </div>
       <div>
         <h4>Increment</h4>
-        {INCREMENTS.map((value) => {
+        {numbers.map((num) => {
           return (
-            <button onClick={() => setCount((count) => count + value)}>
-              +{value}
+            <button onClick={() => setCount((count) => count + num)}>
+              +{num}
             </button>
           );
         })}
       </div>
       <div>
         <h4>Decrement</h4>
-        {DECREMENTS.map((value) => {
+        {numbers.map((num) => {
           return (
-            <button onClick={() => setCount((count) => count - value)}>
-              -{value}
+            <button onClick={() => setCount((count) => count - num)}>
+              -{num}
             </button>
           );
         })}
       </div>
       <div>
-        <button onClick={() => setCount((count) => 0)} className="reset">
+        <button onClick={() => setCount(0)} className="reset">
           RESET
         </button>
       </div>
