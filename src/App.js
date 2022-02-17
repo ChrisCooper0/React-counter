@@ -21,23 +21,19 @@ function App() {
       </div>
       <div>
         <h4>Increment</h4>
-        {numbers.map((num) => {
-          return (
-            <button onClick={() => setCount((count) => count + num)}>
-              +{num}
-            </button>
-          );
-        })}
+        {numbers.map((num) => (
+          <button key={num} onClick={() => setCount((count) => count + num)}>
+            +{num}
+          </button>
+        ))}
       </div>
       <div>
         <h4>Decrement</h4>
-        {numbers.map((num) => {
-          return (
-            <button onClick={() => setCount((count) => count - num)}>
-              -{num}
-            </button>
-          );
-        })}
+        {numbers.map((num) => (
+          <button key={num} onClick={() => setCount((count) => count - num)}>
+            -{num}
+          </button>
+        ))}
       </div>
       <div>
         <button onClick={() => setCount(0)} className="reset">
