@@ -6,6 +6,14 @@ const numbers = [1, 2, 5, 10];
 function App() {
   const [count, setCount] = useState(0);
 
+  const handleAdd = (num) => {
+    setCount(count + num);
+  };
+
+  const handleDeduct = (num) => {
+    setCount(count - num);
+  };
+
   return (
     <div className="App">
       <div>
@@ -22,7 +30,7 @@ function App() {
       <div>
         <h4>Increment</h4>
         {numbers.map((num) => (
-          <button key={num} onClick={() => setCount((count) => count + num)}>
+          <button key={num} onClick={() => handleAdd(num)}>
             +{num}
           </button>
         ))}
@@ -30,7 +38,7 @@ function App() {
       <div>
         <h4>Decrement</h4>
         {numbers.map((num) => (
-          <button key={num} onClick={() => setCount((count) => count - num)}>
+          <button key={num} onClick={() => handleDeduct(num)}>
             -{num}
           </button>
         ))}
